@@ -1,0 +1,106 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+    /* background-color: #1f2937; */
+}
+
+main{
+    padding: 0 24px;
+}
+
+header{
+    padding: 24px;
+    color: blue;
+    text-align: center;
+}
+
+.left-right-container{
+    display: flex;
+    gap: 16px;
+}
+
+.left{
+    float: left;
+   
+    padding: 24px;
+    width: 35%;
+    background-color: rgb(31 41 55 / var(--tw-bg-opacity, 1));
+    height: 82vh;
+    border-radius: 16px;
+}
+
+.right{
+    float: right;
+    padding: 24px;
+    border-radius: 16px;
+    /* margin-left:1%; */
+    width:65%;
+    height: 82vh;
+   background-color: rgb(31 41 55 / var(--tw-bg-opacity, 1));
+}
+
+.title-section{
+    display: flex;
+    justify-content: space-between;
+}
+
+.title-section > h2 {
+    font-size: 1.25rem;
+    color: #E5E7EB;
+}
+
+.title-section-icone{
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: #E5E7EB;
+}
+
+i{
+    cursor: pointer;
+}
+
+.note-section{
+    cursor: pointer;
+    padding: 48px;
+    background-color: #374151;
+    border-left: 5px solid transparent;
+    border-radius: 4px;
+    margin-top: 32px;
+}
+
+.note-section:hover{
+    border-left: 5px solid #2563eb;
+    background-color:#4b5563 ;
+
+}
+
+input{
+    margin-top: 32px;
+    /* padding: 12px 64px 12px 16px; */
+    padding: 18px;
+    background-color: #374151;
+    border: transparent;
+    border-radius: 4px;
+    width: 100%;
+    font-size: 0.9rem;
+    color: white;
+}
+
+input[placeholder="Start typing your idea here..."]{
+    margin: 0;
+}
+
+.input-section > div {
+    height: 48vh;
+    padding-top: 24px;
+ 
+    margin-top: 32px;
+    background-color: #374151;
+}
+
+
+
+
