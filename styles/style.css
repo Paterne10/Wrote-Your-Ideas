@@ -64,14 +64,37 @@ i{
 
 .note-section{
     cursor: pointer;
-    padding: 48px;
+    padding: 18px;
     background-color: #374151;
     border-left: 5px solid transparent;
     border-radius: 4px;
     margin-top: 32px;
 }
 
+.note-section-title {
+ font-size: 14px;
+ color:#E5E7EB;
+
+}
+
+.note-section-content{
+    margin-top: 10px;
+    font-size: 12px;
+    color: #D1D5DB;
+}
+
+.note-section-footer{
+    font-size: 10px;
+    color: #9CA3AF;
+    margin-top: 32px;
+}
+
 .note-section:hover{
+
+}
+
+
+.focus{
     border-left: 5px solid #2563eb;
     background-color:#4b5563 ;
 
@@ -102,5 +125,8 @@ input[placeholder="Start typing your idea here..."]{
 }
 
 
-
+.idea-title:focus{
+    outline: brown;
+    border-color: #2563eb;
+}
 
