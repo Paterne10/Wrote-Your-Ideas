@@ -5,6 +5,10 @@ let noteSection = document.getElementById("note-section")
 let noteSectionTitle = document.querySelector(".note-section-title > h3")
 let dateSection = document.querySelector(".note-section-footer > p")
 
+let altiIdeas = []
+let ideas = []
+
+
 addButon.addEventListener("click", () => {
     ideaTitle.focus()
 })
@@ -13,6 +17,11 @@ ideaTitle.addEventListener("input", (event) => {
     noteSection.classList.add("note-section")
     noteSection.classList.add("focus")
     noteSection.focus()
-    noteSectionTitle.textContent = event.target.value
-    dateSection.textContent = new Date()
+    let title = event.target.value
+    let date = new Date()
+    noteSectionTitle.textContent = title
+    dateSection.textContent = date
+
 })
+
+
