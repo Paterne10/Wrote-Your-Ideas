@@ -93,6 +93,10 @@ i{
 
 }
 
+#note-section {
+    margin-top: 60px;
+}
+
 
 .focus{
     border-left: 5px solid #2563eb;
