@@ -1,4 +1,5 @@
 let addButon = document.getElementById("add-button")
+let registerButton = document.getElementById("register-button")
 let ideaTitle = document.getElementById("idea-title")
 let noteSection = document.getElementById("note-section")
 
@@ -6,16 +7,9 @@ let noteSectionTitle = document.querySelector(".note-section-title > h3")
 let dateSection = document.querySelector(".note-section-footer > p")
 
 let altiIdeas = []
-let ideas = [{
-    "title": "To do list web app",
-    "content": "I have to built a to do list web app for my school project.",
-    "date":"12/12/2026"
-}]
+let ideas = []
 
 
-addButon.addEventListener("click", () => {
-    ideaTitle.focus()
-})
 
 // ideaTitle.addEventListener("input", (event) => {
 //     noteSection.classList.add("note-section")
@@ -34,16 +28,6 @@ addButon.addEventListener("click", () => {
         // title   
         // content
         // date
-
-ideaTitle.addEventListener("focus", ()  =>{
-    ideaTitle.addEventListener("input", (event) => {
-        let title = event.target.value
-        console.log(title)
-
-    })
-    genereateIdeaCard()
-} )
-
 
 let genereateIdeaCard = ()  => {
     return(
@@ -67,6 +51,22 @@ let genereateIdeaCard = ()  => {
     
 }
 
+registerButton.addEventListener("click", () => {
+    noteSection.classList.add("focus")
+    noteSection.classList.add("note-section")
+    let title = ideaTitle.value
+    let content = "I have to wok that."
+    let date = new Date()
+    ideas.push({
+        'title':title,
+        'content':content,
+        'date':date
+    })
+    genereateIdeaCard()
+    ideaTitle.innerText = " "
+    
+
+})
 // Now we need data to built our card
     // We should get that data from when the focus event is active
     // Add that data inside the idea array so we can use it to built the generate card function.
