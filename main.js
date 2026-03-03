@@ -21,8 +21,8 @@ let generateIdea = () => {
             <div class="idea"></div>
 
         ` 
+       
     )
-    
 } 
 
 let generateIdeasEditor = () =>{
@@ -38,7 +38,7 @@ let generateIdeasEditor = () =>{
             <div class="input-section">
                 <input id="idea-title" type="text" placeholder="Idea Title" autocomplete="off" maxlength="100">
                 <div>
-                    <input  type="text" placeholder="Start typing your idea here...">
+                    <input id="idea-content"  type="text" placeholder="Start typing your idea here...">
                 </div>
             </div>
         `
@@ -49,9 +49,11 @@ let generateIdeasEditor = () =>{
 generateIdea()
 generateIdeasEditor()
 
+
 let ideaTitle = document.getElementById("idea-title")
 let noteSectionTitle = document.querySelector(".note-section-title > h3")
 let containerIdea = document.querySelector(".idea")
+let ideaContent = document.getElementById("idea-content")
 
 let genereateIdeaCard = ()  => {
     return(
@@ -75,21 +77,26 @@ let genereateIdeaCard = ()  => {
         })
     )}
 
+genereateIdeaCard()
+
+console.log(ideas)
 
 let registerButton = document.getElementById("register-button")
 let noteSection = document.querySelector("note-section")
 
 registerButton.addEventListener("click", () =>{
     let title = ideaTitle.value
-    let content = "I have to work on that project."
+    let content = ideaContent.value
+
     if(title !== ""){
         ideas.push({
             "title":title,
             "content": content
         });
         genereateIdeaCard()
-        noteSection.classList.add("focus")
-        noteSection.classList.add("note-section")
+        localStorage.setItem("data", JSON.stringify(ideas))
+        // noteSection.classList.add("focus")
+        // noteSection.classList.add("note-section")
         
     }else{
         console.log("valeur vide")
