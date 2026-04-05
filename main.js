@@ -71,13 +71,15 @@ let genereateIdeaCard = ()  => {
             let {title, content, id} = x
             console.log(ideas.length)
             return(`   
-                    <div class = "note-section" onclick="selectCard(${id})" >
+                    <div class = "note-section" >
                         <div class="note-section-title">
                             <h3 onclick="selectCard(${id})"  id="${id}" >${title}</h3>
                         </div>
-                        <p class="note-section-content">${content}</p>
+                        <p onclick="selectCard(${id})" class="note-section-content">${content}</p>
                         <div class="note-section-footer">
                             <p>${date}</p>
+                            <i onclick="deleteIdea(${id})" class="bi bi-trash3"></i>
+
                         </div>
                     </div>
                 `
@@ -96,6 +98,15 @@ let selectCard = (id) => {
     currentId = id
 }
 
+let deleteIdea = (id)  => {
+    ideas = ideas.filter((x) => x.id !== id)
+    genereateIdeaCard()
+    ideaTitle.value = ""
+    ideaContent.value = ""
+    localStorage.setItem("data", JSON.stringify(ideas))
+
+}
+
 
 
 let registerButton = document.getElementById("register-button")
@@ -104,6 +115,7 @@ let noteSectionContent = document.querySelector(".note-section-content")
 let noteSectionDate = document.querySelector(".note-section-footer > p")
 let id = 0
 
+// The edit part 
 registerButton.addEventListener("click", () =>{
     let title = ideaTitle.value
     let content = ideaContent.value
@@ -114,7 +126,6 @@ registerButton.addEventListener("click", () =>{
             "title":title,
             "content": content  
         });
-        console.log("I just add a new card")
         alert("new idea created")
     }else {
         let search = ideas.find((x) => x.id === currentId)
